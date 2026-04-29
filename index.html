@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SportyStyle - Tienda Segura</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SDK de Auth0 para autenticación segura -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SportyStyle</h1>
+        <div id="auth-section">
+            <span id="bienvenida">Cargando...</span>
+            <button id="btn-login" onclick="login()">Iniciar Sesión</button>
+            <button id="btn-logout" onclick="logout()" style="display:none">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <section id="productos">
+        <div class="card">
+            <img src="camiseta.jpg" alt="Camiseta Pro" style="width:100%">
+            <h3>Camiseta Pro</h3>
+            <p>Precio: $15.990</p>
+            <button onclick="agregarAlCarrito('Camiseta Pro', 15990)">Agregar al Carrito</button>
+        </div>
+        <div class="card">
+            <img src="pantalon deportivo.jpg" alt="Pantalón Sport" style="width:100%">
+            <h3>Pantalón Sport</h3>
+            <p>Precio: $22.990</p>
+            <button onclick="agregarAlCarrito('Pantalón Sport', 22990)">Agregar al Carrito</button>
+        </div>
+        <div class="card">
+            <img src="accesorio.jpg" alt="Reloj Deporte" style="width:100%">
+            <h3>Reloj Deporte</h3>
+            <p>Precio: $45.990</p>
+            <button onclick="agregarAlCarrito('Reloj Deporte', 45990)">Agregar al Carrito</button>
+        </div>
+    </section>
+
+    <section id="checkout">
+        <h2>Datos de Despacho</h2>
+        <form id="form-pago" onsubmit="validarCompra(event)">
+            <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="tel" id="telefono" placeholder="Teléfono" required>
+            <button type="submit">Finalizar Compra</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
